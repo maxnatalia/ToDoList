@@ -11,7 +11,7 @@
 ## 📌Description
 This simple project contains adding a new task, ticking a task as done✅ and removing a task.
 
-## Technologies:
+## 🛠Technologies:
 - HTML
 - CSS (grid, media queries)
 - JavaScript
