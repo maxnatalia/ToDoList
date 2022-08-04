@@ -1,14 +1,5 @@
 {
-    const tasks = [
-        {
-            content: "zrobić pranie",
-            done: false,
-        },
-        {
-            content: "posprzątać",
-            done: true
-        },
-    ];
+    const tasks = [];
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
@@ -69,6 +60,13 @@
         bindEvents();
     };
 
+    const clearInput = () => {
+        const formInput = document.querySelector(".js-newTask");
+        
+        formInput.value = "";
+        formInput.focus();
+    };
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -79,6 +77,7 @@
         }
 
         addNewTask(newTaskContent);
+        clearInput();
     };
 
     const init = () => {
