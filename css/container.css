@@ -1,3 +1,11 @@
 .container {
     background-color: white;
 }
+
+.container__title {
+    font-size: 22px;
+    padding: 20px;
+    border-bottom: 3px solid #eee;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
