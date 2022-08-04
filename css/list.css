@@ -35,10 +35,18 @@
     background-color: hwb(120 13% 35%);
 }
 
+.list__button--done:active {
+    background-color: hwb(120 13% 25%);
+}
+
 .list__button--remove {
     background-color: hsl(348, 83%, 47%);
 }
 
 .list__button--remove:hover {
     background-color: hsl(348, 83%, 57%);
+}
+
+.list_button--remove:active {
+    background-color: hsl(348, 83%, 67%);
 }
