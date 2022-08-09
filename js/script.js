@@ -1,20 +1,37 @@
 {
-    const tasks = [];
+    let tasks = [];
+    let hideDoneTasks = false;
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
+        tasks = [
+            ...tasks,
+            {
+                content: newTaskContent,
+                done: false,
+            }];
 
         render();
     };
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1),
+        ];
         render();
-    }
+    };
 
+    const toggleAllTasksDone = (taskIndex) => {
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            { ...tasks[taskIndex], done: !tasks[taskIndex].done, },
+            ...tasks.slice(taskIndex + 1),
+        ];
+        render();
+    };
+    
     const toggleTaskDone = (taskIndex) => {
+        tasks = tasks.map
         tasks[taskIndex].done = !tasks[taskIndex].done;
         render();
     };
@@ -37,32 +54,61 @@
         });
     }
 
-    const render = () => {
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-        <li class="list__item">
-            <button class="list__button list__button--done js-done">
-                ${task.done ? "✔" : ""}
-            </button>
-                <span class="${task.done ? "list__item--done" : ""}">
-                ${task.content}
-                </span>
-            <button class="list__button list__button--remove js-remove">
-                🗑
-            </button>
-        </li>
-        `;
+    <li class="list__item">
+        <button class="list__button list__button--done js-done">
+            ${task.done ? "✔" : ""}
+        </button>
+            <span class="${task.done ? "list__item--done" : ""}">
+            ${task.content}
+            </span>
+        <button class="list__button list__button--remove js-remove">
+            🗑
+        </button>
+    </li>
+    `;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+    }
+    const bindButtonsEvents = () => {
 
+    }
+    const renderButtons = () => {
+        const containerTitleButtons = document.querySelector(".js-titleButtons");
+
+        if (tasks.length === 0) {
+            containerTitleButtons.innerHTML = "";
+            return;
+        }
+
+        containerTitleButtons.innerHTML = `
+        <button class="container__titleButtons js-hideDoneTasks">
+        ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+        
+        </button>
+        <button class="container__titleButtons js-allDone"
+        ${tasks.every(({ done }) => done) ? "disabled" : ""}>
+        Ukończ wszystkie
+        </button>`
+    };
+
+
+    const render = () => {
+
+        renderTasks();
+        renderButtons();
         bindEvents();
+        bindButtonsEvents();
+
     };
 
     const clearInput = () => {
         const formInput = document.querySelector(".js-newTask");
-        
+
         formInput.value = "";
         formInput.focus();
     };
