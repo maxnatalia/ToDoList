@@ -5,7 +5,51 @@
 .container__title {
     font-size: 22px;
     padding: 20px;
-    border-bottom: 3px solid #eee;
     margin-bottom: 0px;
     margin-top: 10px;
+    border-bottom: 3px solid #eee;
+}
+
+.container__title--header {
+    font-size: 22px;
+    padding: 20px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.container__title--buttons {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .container__title--buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container__titleButtons {
+    background-color: white;
+    color: hsl(180, 100%, 25%);
+    border: none;
+    padding: 5px;
+    margin: 0;
+    cursor: pointer;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .container__titleButtons {
+        width: 100%;
+    }
+}
+
+.container__titleButtons:hover {
+    color: hsl(180, 100%, 35%);
+    transition: 1s;
+}
+
+.container__titleButtons:active {
+    color: hsl(180, 100%, 45%);
 }

@@ -3,6 +3,8 @@
     word-break: break-word;
     padding: 40px;
     margin: 0;
+    background-color: white;
+    border-top: 3px solid #eee;
 }
 
 .list__item {
@@ -32,6 +34,7 @@
 
 .list__button--done:hover {
     background-color: hwb(120 13% 35%);
+    transition: 1s;
 }
 
 .list__button--done:active {
@@ -44,6 +47,7 @@
 
 .list__button--remove:hover {
     background-color: hsl(348, 83%, 57%);
+    transition: 1s;
 }
 
 .list_button--remove:active {
