@@ -19,6 +19,10 @@
     text-decoration: line-through;
 }
 
+.list__item--hidden {
+    display: none;
+}
+
 .list__button {
     padding: 0px;
     border: none;
