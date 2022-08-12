@@ -5,11 +5,13 @@
 [Add your new task](https://maxnatalia.github.io/ToDoList/)
 
 ## 👁‍🗨Website preview
+![Animation-List-To-Do.gif](https://i.postimg.cc/L6zHHDTN/Animation-List-To-Do.gif)
 
-![animation-To-Do-List.gif](https://i.postimg.cc/7YDyMDhQ/animation-To-Do-List.gif)
 
 ## 📌Description
-This simple project contains adding a new task, ticking a task as done✅ and removing a task.
+This simple project contains adding a new task, ticking a task as done✅ and removing a task. 
+
+The project has been upgraded with new interesting features. Now you can also hiding completed tasks and quickly unchecking all already completed tasks.
 
 ## 🛠Technologies:
 - HTML
